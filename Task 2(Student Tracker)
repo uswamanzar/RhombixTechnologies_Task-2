@@ -1,0 +1,21 @@
+subjects = {}
+num= int(input("How many subjects do you want to enter?"))
+for i in range(num):
+    subject = input(f"Enter subject {i + 1} name: ")
+    grade= int(input(f"Enter marks for the {subject}: "))
+    subjects[subject]=grade
+
+print("------------Student,s Grade------------")
+total =0
+for subject, grade in subjects.items():
+    print(f"{subject}: {grade}")
+    total += grade
+
+average = total / len(subjects)
+highest_subject = max(subjects, key=subjects.get)
+lowest_subject = min(subjects, key=subjects.get)
+print("Average Grade:", round(average, 2))
+print(f"Highest Grade: {highest_subject} ({subjects[highest_subject]})")
+print(f"Lowest Grade: {lowest_subject} ({subjects[lowest_subject]})")
+
+
